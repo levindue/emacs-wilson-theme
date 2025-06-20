@@ -3,6 +3,8 @@
 ;; Author: Levin Düsterhus <levin@duesterhus.net>
 ;; URL: https://github.com/levindue/emacs-wilson-theme
 ;; License: GPL-3.0
+;; Version: 0.1
+;; Package-Requires: ((emacs "24.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -95,8 +97,7 @@
    `(magit-blame-heading ((t (:background ,wilson-light-gray :foreground ,wilson-darker-stained-orange))))
 
    ;; ---------------- Vertico --------------------
-   `(vertico-current ((t (:foreground ,wilson-darker-stained-white :background ,wilson-flying-boots))))
-   ))
+   `(vertico-current ((t (:foreground ,wilson-darker-stained-white :background ,wilson-flying-boots))))))
 
 ;;;###autoload
 (when load-file-name
