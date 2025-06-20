@@ -1,11 +1,6 @@
-;;; wilson-theme.el --- A theme based upon a dirty spitfire -*- lexical-binding: t -*-
+;;; wilson-ng-theme.el --- A modernized version of the Wilson theme -*- lexical-binding: t -*-
 
-;; This file is a modified version of the "Wilson" theme
-;; originally from the emacs-color-themes package by Owain Lewis.
-;; Modifications include an expanded color palette, face remapping
-;; and modern plugin support.
-
-;; Author: Levin Düsterhus levin@duesterhus.net
+;; Author: Levin Düsterhus <levin@duesterhus.net>
 ;; URL: https://github.com/levindue/emacs-wilson-theme
 ;; License: GPL-3.0
 
@@ -22,8 +17,16 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-(deftheme wilson
-  "A theme based upon a dirty spitfire")
+;;; Commentary:
+;; This is a modified version of the "Wilson" theme
+;; originally from the sublime-themes package by Owain Lewis.
+;; Modifications include an expanded color palette, face remapping
+;; and modern plugin support.
+
+;;; Code:
+
+(deftheme wilson-ng
+  "A modernized version of the Wilson theme based upon a dirty spitfire.")
 
 (let ((wilson-oilstained-eggshell   "#6C6B59")
       (wilson-flying-boots          "#44443C")
@@ -45,7 +48,7 @@
       (wilson-lighter-stained-blue   "#7A8B9B"))
 
   (custom-theme-set-faces
-   'wilson
+   'wilson-ng
 
    ;; ----------------- Frame stuff --------------------
    `(default ((t (:background ,wilson-darker-flying-boots :foreground ,wilson-stained-white))))
@@ -55,27 +58,18 @@
    `(mode-line-inactive ((t (:box nil :background ,wilson-light-gray :foreground ,wilson-stained-yellow))))
    `(mode-line ((t (:box nil :foreground ,wilson-stained-white :background ,wilson-flying-boots))))
    `(fringe ((t (:background ,wilson-darker-flying-boots))))
-   ;; Dir-ed search prompt
    `(minibuffer-prompt ((default (:foreground ,wilson-stained-orange))))
-   `(linum ((t (:background, wilson-darker-flying-boots :foreground, wilson-stained-white))))
-   ;; Highlight region color
+   `(linum ((t (:background ,wilson-darker-flying-boots :foreground, wilson-stained-white))))
    `(region ((t (:foreground ,wilson-darker-stained-white :background ,wilson-flying-boots))))
 
    ;; ---------------- Code Highlighting ---------------
-   ;; Builtin
    `(font-lock-builtin-face ((t (:foreground ,wilson-darker-stained-orange))))
-   ;; Constants
    `(font-lock-constant-face ((t (:foreground ,wilson-stained-orange))))
-   ;; Comments
    `(font-lock-comment-face ((t (:foreground ,wilson-oilstained-eggshell))))
-   ;; Function names
    `(font-lock-function-name-face ((t (:foreground ,wilson-lighter-stained-blue))))
    `(font-lock-function-call-name-face ((t (:foreground ,wilson-lighter-stained-blue))))
-   ;; Keywords
    `(font-lock-keyword-face ((t (:foreground ,wilson-darker-stained-orange))))
-   ;; Strings
    `(font-lock-string-face ((t (:foreground ,wilson-spring-grass))))
-   ;; Variables
    `(font-lock-variable-name-face ((t (:foreground ,wilson-stained-white))))
    `(font-lock-type-face ((t (:foreground ,wilson-darker-stained-yellow))))
    `(font-lock-warning-face ((t (:foreground ,wilson-darker-stained-orange :bold t))))
@@ -102,18 +96,17 @@
 
    ;; ---------------- Vertico --------------------
    `(vertico-current ((t (:foreground ,wilson-darker-stained-white :background ,wilson-flying-boots))))
-
-))
+   ))
 
 ;;;###autoload
 (when load-file-name
   (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name)))
-  (when (not window-system)
-    (custom-set-faces '(default ((t (:background nil)))))))
+               (file-name-as-directory (file-name-directory load-file-name))))
 
-(provide-theme 'wilson)
+(provide-theme 'wilson-ng)
 
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:
+
+;;; wilson-ng-theme.el ends here
