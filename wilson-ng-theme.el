@@ -94,10 +94,14 @@
    `(magit-process-ok ((t (:foreground ,wilson-spring-grass :weight bold))))
    `(magit-process-ng ((t (:foreground ,wilson-stained-orange :weight bold))))
    `(magit-blame-highlight ((t (:background ,wilson-light-gray))))
-   `(magit-blame-heading ((t (:background ,wilson-light-gray :foreground ,wilson-darker-stained-orange))))
+   `(magit-blame-heading ((t (:background ,wilson-light-gray))))
 
    ;; ---------------- Vertico --------------------
-   `(vertico-current ((t (:foreground ,wilson-darker-stained-white :background ,wilson-flying-boots))))))
+   `(vertico-current ((t (:foreground ,wilson-darker-stained-white :background ,wilson-flying-boots))))
+
+   ;; ---------------- Markdown-mode --------------------
+   `(markdown-link-face ((t (:foreground ,wilson-lighter-stained-blue))))))
+   
 
 ;;;###autoload
 (when load-file-name
